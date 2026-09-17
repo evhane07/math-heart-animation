@@ -1,6 +1,6 @@
 import math
-# import random
-# import sys
+import random
+import sys
 import pygame
 
 pygame.init()
@@ -20,3 +20,15 @@ def heart_function(t, scale=15):
         - math.cos(4 * t)
     )
     return x * scale, y * scale
+
+
+class Particle:
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.size = random.uniform(1.5, 3.5)
+        self.alpha = random.randint(150, 255)
+        self.color = (255, random.randint(50, 120), random.randint(100, 180))
+        self.vx = random.uniform(-0.5, 0.5)
+        self.vy = random.uniform(-0.5, 0.5)
