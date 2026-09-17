@@ -38,3 +38,15 @@ class Particle:
         self.x += self.vx
         self.y += self.vy
         self.alpha -= 2
+        
+              
+    def draw(self, surface):
+        if self.alpha > 0:
+            s = pygame.Surface((self.size * 2, self.size * 2), pygame.SRCALPHA)
+            pygame.draw.circle(
+                s,
+                (*self.color, max(0, self.alpha)),
+                (self.size, self.size),
+                self.size,
+            )
+            surface.blit(s, (self.x - self.size, self.y - self.size))
