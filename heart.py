@@ -32,3 +32,9 @@ class Particle:
         self.color = (255, random.randint(50, 120), random.randint(100, 180))
         self.vx = random.uniform(-0.5, 0.5)
         self.vy = random.uniform(-0.5, 0.5)
+
+
+    def update(self):
+        self.x += self.vx
+        self.y += self.vy
+        self.alpha -= 2
